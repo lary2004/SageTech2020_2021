@@ -67,9 +67,8 @@ public class Login extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         //check condition
         if(firebaseUser != null){
-            //redirect to profile activity (main)
-            startActivity(new Intent(Login.this
-                           ,MainActivity.class)
+           //redirect to profile activity (main)
+            startActivity(new Intent(Login.this,MainActivity.class)
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
