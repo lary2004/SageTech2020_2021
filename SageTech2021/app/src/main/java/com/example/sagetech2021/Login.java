@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Login extends AppCompatActivity {
@@ -62,6 +63,15 @@ public class Login extends AppCompatActivity {
 
         //Initialize firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
+        //initialize firebase user
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        //check condition
+        if(firebaseUser != null){
+            //redirect to profile activity (main)
+            startActivity(new Intent(Login.this
+                           ,MainActivity.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
     }
 
     @Override
@@ -71,7 +81,7 @@ public class Login extends AppCompatActivity {
         //check condition
         if(requestCode==100){
             //Initialize task
-            Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn
+            final Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn
                     .getSignedInAccountFromIntent(data);
             //Check condition
             if(signInAccountTask.isSuccessful()){
@@ -96,7 +106,21 @@ public class Login extends AppCompatActivity {
                                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
+                                        //check condition
+                                        if(task.isSuccessful()){
+                                            //redirect to profile activity
+                                            startActivity(new Intent(Login.this,
+                                                    MainActivity.class)
+                                                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
+                                            //display toast
+                                            displayToast("Firebase authentication successful");
+                                        }
+                                        else{
+                                            //Display toast
+                                            displayToast("Authentication failed : " + task.getException()
+                                            .getMessage());
+                                        }
                                     }
                                 });
 
