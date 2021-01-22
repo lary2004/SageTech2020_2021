@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "973547652702",
+    "project_id": "sagetech2021",
+    "storage_bucket": "sagetech2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973547652702:android:672297bc1a47ffc8cc16cf",
+        "android_client_info": {
+          "package_name": "com.example.sagetech2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973547652702-fk9t2fko404ibtrfl6unhknkt7qm4of6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sagetech2021",
+            "certificate_hash": "fd330c1838360311c869488ed9b333034a2471ff"
+          }
+        },
+        {
+          "client_id": "973547652702-a12vd3p3b5hsv23rsq9o2mc2la3ln951.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0_U8uJuKal7Rg-5YR8WYLDKcjdxWzz2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973547652702-a12vd3p3b5hsv23rsq9o2mc2la3ln951.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
